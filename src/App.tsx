@@ -1,12 +1,19 @@
-import { Route, Routes } from "react-router-dom";
-import HomePage from "@/page/home.tsx";
+import { Route, Routes, Outlet } from "react-router-dom";
+import RootLayout from "@/component/RootLayout/rootLayout";
+import { Paths, Router } from "@/routes";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-      </Routes>
+      <RootLayout>
+        <Routes>
+          <Route path={Paths.Home} element={<Outlet />}>
+            <Route path="" element={Router.Home} />
+            <Route path={Paths.dashboard} element={Router.dashboard} />
+            <Route path={Paths.massage} element={Router.massage} />
+          </Route>
+        </Routes>
+      </RootLayout>
     </>
   );
 }
