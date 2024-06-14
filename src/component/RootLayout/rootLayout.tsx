@@ -1,15 +1,14 @@
 import Sidebar from "./Sidebar";
+import { Outlet } from "react-router-dom";
 
-interface RootLayout {
-  children: JSX.Element;
-}
-
-const RootLayout = ({ children }: RootLayout) => {
+const RootLayout = () => {
   return (
     <>
       <div className="flex">
         <Sidebar />
-        {children}
+        <main className="w-full flex-1">
+          <Outlet />
+        </main>
       </div>
     </>
   );
