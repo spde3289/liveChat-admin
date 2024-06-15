@@ -5,12 +5,13 @@ import HomePage from "./home";
 import DashboardPage from "./dashBoard";
 import MassagePage from "./massage";
 import RootLayout from "@/component/RootLayout/rootLayout";
-
+import NotFound from "./NotFound";
 
 const router = createBrowserRouter([
   {
     path: Paths.Home,
     element: <RootLayout />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "",
@@ -29,5 +30,5 @@ const router = createBrowserRouter([
 ]);
 
 export const CreateRouterProvider: any = () => (
-   <RouterProvider router={router} />
+  <RouterProvider router={router} />
 );
