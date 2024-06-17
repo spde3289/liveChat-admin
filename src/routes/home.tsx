@@ -1,8 +1,7 @@
 const HomePage = () => {
   return (
     <>
-        <div className="text-3xl font-extrabold">dasdasda</div>
-
+      <div>대시보드 페이지</div>
     </>
   );
 };
