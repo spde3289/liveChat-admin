@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 const RootLayout = () => {
   return (
     <>
-      <div className="flex">
+      <div className="flex h-screen overflow-hidden">
         <Sidebar />
         <main className="w-full flex-1">
           <Outlet />

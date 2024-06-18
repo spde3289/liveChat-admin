@@ -1,17 +1,14 @@
-// import axios from "axios"
-import { useEffect } from "react";
-import { getRoomList } from "@/fetch/roomFatch";
+import RoomList from "@/component/message/roomList";
 
 const MessagePage = () => {
-  useEffect(() => {
-    getRoomList().then((response) => {
-      console.log(response);
-    });
-  }, []);
-
   return (
     <>
-      <div>메세지 페이지</div>
+      <div className="flex pl-5 py-3 h-full">
+          <RoomList />
+        <div className="h-5/6">
+        </div>
+        <div> ddddd </div>
+      </div>
     </>
   );
 };
