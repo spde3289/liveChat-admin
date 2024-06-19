@@ -10,7 +10,6 @@ const RoomList = () => {
   useEffect(() => {
     getRoomList().then((response) => {
       setRoomList(response);
-      console.log(response);
     });
   }, []);
 
