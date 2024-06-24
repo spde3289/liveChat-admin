@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <RoomProvider>
-        <CreateRouterProvider />;
+        <CreateRouterProvider />
       </RoomProvider>
     </>
   );

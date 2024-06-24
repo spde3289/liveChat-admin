@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import useRoomContext from "@/context/useRoomContext";
 import { socket } from "@/socket/soket";
+import ChatRoom from "./chatRoom";
 
-const ChatRoom = () => {
+// const user = "관리자";
+
+const ChatRoomLobby = () => {
   const { selectedRoom } = useRoomContext();
   console.log(selectedRoom);
 
@@ -19,10 +22,11 @@ const ChatRoom = () => {
   useEffect(() => {
     // 방 최초 입장
 
-    if (selectedRoom != null) {
-      socket.emit("join room", "admin", selectedRoom);
-    }
+    // if (selectedRoom === null) {
+    //   socket.emit("join room", user, selectedRoom);
+    // }
     // 채팅 입력
+
     // socket.on("chat message", (remsg: any) => {
     //   setChatLog((currentMsg) => [
     //     ...currentMsg,
@@ -50,13 +54,15 @@ const ChatRoom = () => {
 
   return (
     <>
-      <div className="">
-        <div>
-          {selectedRoom === null ? "선택된 항목이 없습니다." : selectedRoom}
-        </div>
+      <div className="h-full">
+        {selectedRoom === null ? (
+          "선택된 항목이 없습니다."
+        ) : (
+          <ChatRoom roomName={selectedRoom} />
+        )}
       </div>
     </>
   );
 };
 
-export default ChatRoom;
+export default ChatRoomLobby;

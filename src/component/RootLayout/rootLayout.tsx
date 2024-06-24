@@ -11,7 +11,7 @@ const RootLayout = () => {
         </main>
       </div>
     </>
-  );
+  )
 };
 
 export default RootLayout;
