@@ -1,12 +1,13 @@
 import useRoomContext from "@/context/useRoomContext";
 
 const ListItem = ({ item }: any) => {
-  const { setSelectedRoom } = useRoomContext();
+  const { selectedRoom, setSelectedRoom } = useRoomContext();
   console.log(item);
+  const current = selectedRoom === item.id ? "bg-slate-300" : "";
   return (
     <li
       onClick={() => setSelectedRoom(item.id)}
-      className="border-b-[1px] flex w-fit text-sm "
+      className={`${current} border-b-[1px] flex w-fit text-sm `}
     >
       <div className="w-40 p-[6px_14px] box-content whitespace-nowrap overflow-hidden text-ellipsis">
         {item.roomName}

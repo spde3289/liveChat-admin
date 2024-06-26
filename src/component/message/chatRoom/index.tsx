@@ -1,5 +1,4 @@
 import { useState, useEffect, memo, KeyboardEvent, ChangeEvent } from "react";
-import { useLocation } from "react-router-dom";
 import { socket } from "@/socket/soket";
 import { ChatLogType } from "@/type/room";
 import MsgContainer from "./msgContainer";
@@ -14,21 +13,6 @@ const user = "관리자";
 export default memo(function ChatRoom({ roomName }: ChatRoomInterface) {
   const [chatLog, setChatLog] = useState<ChatLogType[]>([]);
   const [msg, setMsg] = useState<string>("");
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.state?.value === undefined) {
-    }
-
-    socket.connect();
-    // 언마운트
-    return () => {
-      socket.emit("나가기", user);
-      if (socket) {
-        socket.disconnect();
-      }
-    };
-  }, [roomName]);
 
   useEffect(() => {
     // 방 최초 입장
@@ -81,18 +65,12 @@ export default memo(function ChatRoom({ roomName }: ChatRoomInterface) {
   return (
     <section className="scrollBarController flex flex-col items-center m-auto h-full w-full mx-0">
       <div className="flex h-[100%] w-full justify-between flex-col ">
-        <header className="flex items-center bg-white h-14 ">
-          <h2 className="text-lg font-bold pl-10">
-            {location.state?.selectMenu}
-          </h2>
-        </header>
         <MsgContainer user={user} chatLog={chatLog} />
         <InputContainer
           msg={msg}
           onChangeMsg={onChangeMsg}
           handleKeypress={handleKeypress}
         />
-        <div className="h-8"></div>
       </div>
     </section>
   );
