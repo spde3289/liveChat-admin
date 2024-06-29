@@ -33,7 +33,7 @@ export default memo(function InputContainer({
   const handleKeyDown = (e: any) => {
     if (e.key === "Enter" && !e.shiftKey) {
       // Shift + Enter를 눌렀을 때만 줄 바꿈 처리
-      출처: https: e.preventDefault(); // 기본 Enter 동작을 막음
+      e.preventDefault(); // 기본 Enter 동작을 막음
       // 여기에 추가적인 동작을 수행할 수 있음 (예: 입력된 내용 처리)
     }
   };
