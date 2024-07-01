@@ -44,32 +44,3 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
-/* 아래의 모든 코드는 영역::코드로 사용 */
-.scrollBar::-webkit-scrollbar {
-  width: 8px; /* 스크롤바의 너비 */
-  opacity: 0;
-}
-
-.scrollBar::-webkit-scrollbar-thumb {
-  background-color: rgba(193, 193, 193, 0.5); /* 스크롤바의 색상 */
-  border-radius: 10px;
-}
-
-.scrollBarController:hover .scrollBar::-webkit-scrollbar-thumb {
-  background-color: rgba(193, 193, 193, 0.5); /* 스크롤바의 색상 */
-}
-
-.item:nth-child(5) {
-  grid-column: 1 / 3;
-}
-.item:nth-child(6) {
-  grid-column: 3 / 5;
-}
-
-.item:nth-child(7) {
-  grid-column: 1 / 3;
-}
-.item:nth-child(8) {
-  grid-column: 3 / 5;
-}
