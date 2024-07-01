@@ -1,6 +1,6 @@
 import useRoomContext from "@/context/useRoomContext";
 import useContextMenu, { ContextMenuItem } from "@/customHooks/useContextMenu";
-import { DeleteRoom } from "@/fetch/roomFatch";
+import { DeleteRoom, EditRoom } from "@/fetch/roomFatch";
 
 const ListItem = ({ item, setRoomList }: any) => {
   const { selectedRoom, setSelectedRoom } = useRoomContext();
@@ -22,7 +22,9 @@ const ListItem = ({ item, setRoomList }: any) => {
             label: "진행중",
             action: () => {
               if (item.status != "진행중") {
-                console.log("진행중");
+                EditRoom(item, "진행중").then((response) => {
+                  setRoomList(response);
+                });
               }
             },
           },
@@ -30,7 +32,9 @@ const ListItem = ({ item, setRoomList }: any) => {
             label: "종료됨",
             action: () => {
               if (item.status != "종료됨") {
-                console.log("종료됨");
+                EditRoom(item, "종료됨").then((response) => {
+                  setRoomList(response);
+                });
               }
             },
           },

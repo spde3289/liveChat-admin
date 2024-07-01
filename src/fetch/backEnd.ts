@@ -51,13 +51,13 @@ export const Post = async <T>(
 
   return response;
 };
+
 export const Put = async <T>(
   url: string,
   data?: any,
   config?: AxiosRequestConfig
 ): Promise<AxiosResponse<CommonResponse<T>>> => {
   const response = await client.put(url, data, config);
-
   return response;
 };
 
