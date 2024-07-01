@@ -1,7 +1,8 @@
 import useRoomContext from "@/context/useRoomContext";
 import useContextMenu, { ContextMenuItem } from "@/customHooks/useContextMenu";
+import { DeleteRoom } from "@/fetch/roomFatch";
 
-const ListItem = ({ item }: any) => {
+const ListItem = ({ item, setRoomList }: any) => {
   const { selectedRoom, setSelectedRoom } = useRoomContext();
 
   const {
@@ -20,12 +21,18 @@ const ListItem = ({ item }: any) => {
           {
             label: "진행중",
             action: () => {
-              console.log("진행중");
+              if (item.status != "진행중") {
+                console.log("진행중");
+              }
             },
           },
           {
             label: "종료됨",
-            action: () => console.log("종료됨"),
+            action: () => {
+              if (item.status != "종료됨") {
+                console.log("종료됨");
+              }
+            },
           },
         ],
       },
@@ -34,6 +41,10 @@ const ListItem = ({ item }: any) => {
         action: () =>
           handleMenuItemClick(() => {
             console.log("Rename action is triggering");
+            DeleteRoom(item).then((response) => {
+              setRoomList(response);
+            });
+            setSelectedRoom(null);
           }),
       },
     ];

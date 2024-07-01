@@ -17,7 +17,7 @@ const RoomList = () => {
     <>
       <ul className="h-full min-w-fit box-border overflow-y-scroll scrollBar scrollBarController">
         {roomList?.map((el) => (
-          <ListItem key={el.id} item={el} />
+          <ListItem setRoomList={setRoomList} key={el.id} item={el} />
         ))}
       </ul>
     </>

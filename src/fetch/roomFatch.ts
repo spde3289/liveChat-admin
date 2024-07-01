@@ -1,4 +1,4 @@
-import { Get, Post } from "./backEnd";
+import { Get, Post, Delete } from "./backEnd";
 import { isCheckRoomList } from "@/util/isCheckRoomList";
 import { RoomListType } from "@/type/room";
 
@@ -24,6 +24,18 @@ interface JoinRoomReqBodyType {
 
 export const JoinRoom = async (data: JoinRoomReqBodyType) => {
   return Post<any>("/room/join", data)
+    .then((res: any) => {
+      return res.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+export const DeleteRoom = async (data: any) => {
+  return Delete<any>("/room", {
+    data: data,
+  })
     .then((res: any) => {
       return res.data;
     })

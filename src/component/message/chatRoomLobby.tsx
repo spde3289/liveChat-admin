@@ -7,7 +7,6 @@ const user = "관리자";
 
 const ChatRoomLobby = () => {
   const { selectedRoom } = useRoomContext();
-  console.log(selectedRoom);
 
   useEffect(() => {
     socket.connect();
