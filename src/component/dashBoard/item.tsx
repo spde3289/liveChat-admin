@@ -12,7 +12,7 @@ const Item = ({ width, height, children }: ItemProps) => {
 
   return (
     <>
-      <div style={style} className="rounded-lg bg-white">
+      <div style={style} className="item rounded-lg bg-white">
         {children}
       </div>
     </>

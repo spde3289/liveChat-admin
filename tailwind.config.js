@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        base: "rgb(3, 54, 61)",
+        base: "#191f2f",
         msg: "rgb(244, 244, 244)",
         hover: "#ececec",
         line: "#F3F3F4",

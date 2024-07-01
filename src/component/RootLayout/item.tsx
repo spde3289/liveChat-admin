@@ -12,14 +12,17 @@ const MenuItem = ({ children, path }: MenuItemProps) => {
 
   const currentIndex =
     location.pathname.replace("/", "") === path.replace("/", "")
-      ? "rounded-2xl bg-slate-600"
-      : "";
+      ? "bg-[#616570] text-white"
+      : "text-slate-500";
 
   return (
-    <li
-      className={` ${currentIndex}  flex w-full h-16 items-center justify-center `}
-    >
-      <Link to={path}>{children}</Link>
+    <li className={` ${currentIndex} flex h-16 items-center w-full `}>
+      <Link
+        to={path}
+        className="flex w-full h-full justify-center items-center  "
+      >
+        {children}
+      </Link>
     </li>
   );
 };

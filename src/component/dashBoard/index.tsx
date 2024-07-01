@@ -1,32 +1,24 @@
 import Item from "./item";
+import UserCountContainer from "./userCount";
 
 const DashBoard = () => {
+  //flex flex-wrap
   return (
     <>
-      <div className="p-2 h-full w-full bg-gray-200 flex flex-wrap gap-3 overflow-y-scroll">
-        <Item width={400} height={400}>
-          <div>어쩌구 저쩌구</div>
+      <div className="p-2 h-full w-full bg-gray-200 grid gap-3 grid-cols-4 scrollBar overflow-y-scroll">
+        <UserCountContainer />
+        <Item height={500}>
+          <div>어쩌구 저쩌구5</div>
         </Item>
-        <Item width={450} height={400}>
-          <div>어쩌구 저쩌구</div>
+        <Item height={500}>
+          <div>어쩌구 저쩌구6</div>
         </Item>
-        <Item width={600} height={400}>
-          <div>어쩌구 저쩌구</div>
+
+        <Item height={600}>
+          <div>어쩌구 저쩌구7</div>
         </Item>
-        <Item width={400} height={400}>
-          <div>어쩌구 저쩌구</div>
-        </Item>
-        <Item height={400}>
-          <div>어쩌구 저쩌구</div>
-        </Item>
-        <Item width={400} height={400}>
-          <div>어쩌구 저쩌구</div>
-        </Item>
-        <Item width={400} height={400}>
-          <div>어쩌구 저쩌구</div>
-        </Item>
-        <Item width={400} height={400}>
-          <div>어쩌구 저쩌구</div>
+        <Item height={600}>
+          <div>어쩌구 저쩌구8</div>
         </Item>
       </div>
     </>
