@@ -1,8 +1,21 @@
 import useRoomContext from "@/context/useRoomContext";
 import useContextMenu, { ContextMenuItem } from "@/customHooks/useContextMenu";
-import { DeleteRoom, EditRoom } from "@/fetch/roomFatch";
+// import { DeleteRoom, EditRoom } from "@/fetch/roomFatch";
+import { RoomListType } from "@/type/room";
 
-const ListItem = ({ item, setRoomList }: any) => {
+import { stateAction, deleteAction } from "./action";
+
+interface ListItemProps {
+  item: {
+    id: string;
+    roomName: string;
+    status: string;
+    selectMenu: string;
+  };
+  setRoomList: React.Dispatch<React.SetStateAction<RoomListType>>;
+}
+
+const ListItem = ({ item, setRoomList }: ListItemProps) => {
   const { selectedRoom, setSelectedRoom } = useRoomContext();
 
   const {
@@ -20,36 +33,18 @@ const ListItem = ({ item, setRoomList }: any) => {
         sub: [
           {
             label: "진행중",
-            action: () => {
-              if (item.status != "진행중") {
-                EditRoom(item, "진행중").then((response) => {
-                  setRoomList(response);
-                });
-              }
-            },
+            action: () => stateAction("진행중", item, setRoomList),
           },
           {
             label: "종료됨",
-            action: () => {
-              if (item.status != "종료됨") {
-                EditRoom(item, "종료됨").then((response) => {
-                  setRoomList(response);
-                });
-              }
-            },
+            action: () => stateAction("종료됨", item, setRoomList),
           },
         ],
       },
       {
         label: "방 삭제",
         action: () =>
-          handleMenuItemClick(() => {
-            console.log("Rename action is triggering");
-            DeleteRoom(item).then((response) => {
-              setRoomList(response);
-            });
-            setSelectedRoom(null);
-          }),
+          deleteAction(handleMenuItemClick, item, setRoomList, setSelectedRoom),
       },
     ];
 

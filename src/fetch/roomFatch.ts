@@ -32,7 +32,14 @@ export const JoinRoom = async (data: JoinRoomReqBodyType) => {
     });
 };
 
-export const DeleteRoom = async (data: RoomListType) => {
+type RoomType = {
+  id: string;
+  roomName: string;
+  status: string;
+  selectMenu: string;
+};
+
+export const DeleteRoom = async (data: RoomType) => {
   return Delete<any>("/room", {
     data: data,
   })
@@ -44,7 +51,7 @@ export const DeleteRoom = async (data: RoomListType) => {
     });
 };
 
-export const EditRoom = async (data: RoomListType, newStatus: string) => {
+export const EditRoom = async (data: RoomType, newStatus: string) => {
   const updatedData = {
     ...data,
     status: newStatus,
