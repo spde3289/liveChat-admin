@@ -2,8 +2,6 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { CommonResponse } from "@/type/common";
 export const getApiBase = () => import.meta.env.VITE_BASE_URL;
 
-console.log(getApiBase());
-
 const client = axios.create({
   timeout: 3000,
   baseURL: getApiBase(),

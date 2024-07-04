@@ -50,3 +50,7 @@
 .check::before {
   content: "✓ ";
 }
+
+.recharts-pie * {
+  outline: none !important;
+}

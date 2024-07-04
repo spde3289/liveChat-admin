@@ -8,8 +8,6 @@ interface MenuItemProps {
 const MenuItem = ({ children, path }: MenuItemProps) => {
   const location = useLocation();
 
-  console.log(location.pathname);
-
   const currentIndex =
     location.pathname.replace("/", "") === path.replace("/", "")
       ? "bg-[#616570] text-white"
