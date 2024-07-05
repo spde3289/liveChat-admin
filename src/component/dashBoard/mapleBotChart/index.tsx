@@ -22,7 +22,8 @@ const MapleBotChart = () => {
                 cx="50%"
                 cy="50%"
                 outerRadius={150}
-                label
+                labelLine={false}
+                label={renderCustomizedLabel}
               />
               <Legend
                 iconSize={10}
@@ -38,6 +39,27 @@ const MapleBotChart = () => {
         </div>
       </>
     </Item>
+  );
+};
+
+const RADIAN = Math.PI / 180;
+
+const renderCustomizedLabel = (props: any) => {
+  const { cx, cy, midAngle, innerRadius, outerRadius, value } = props;
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="black"
+      textAnchor={x > cx ? "start" : "end"}
+      dominantBaseline="central"
+    >
+      {value}
+    </text>
   );
 };
 
