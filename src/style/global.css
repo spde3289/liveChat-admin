@@ -54,3 +54,7 @@
 .recharts-pie * {
   outline: none !important;
 }
+
+.ani {
+  animation: all ease-in 1ms;
+}
