@@ -1,6 +1,7 @@
 import Item from "./item";
 import UserCountContainer from "./userCount";
 import BotUsePieChart from "./botUsePieChart";
+import LiveChatCountChart from "./liveChatCountChart";
 import mapleUseCount from "@/data/mapleBotuseCount.json";
 import mhBotUseCount from "@/data/MHBotUseCount.json";
 
@@ -16,17 +17,7 @@ const DashBoard = () => {
         />
         <BotUsePieChart title="몬헌 봇 명령어 이용 횟수" data={mhBotUseCount} />
         <Item height={600}>
-          <>
-            <div>어쩌구 저쩌구7</div>
-            <svg width="300px" height="300px">
-              <path
-                d="M0,0 50,50 30,230"
-                fill="none"
-                stroke="#333333"
-                strokeWidth="3"
-              />
-            </svg>
-          </>
+          <LiveChatCountChart />
         </Item>
         <Item height={600}>
           <div>어쩌구 저쩌구8</div>
