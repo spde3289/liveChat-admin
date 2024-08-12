@@ -2,7 +2,7 @@ import { memo } from "react";
 
 const CustomTooltip = (props: any) => {
   const { payload } = props;
-  console.log(props);
+
   return (
     <div className="p-2 ani bg-black bg-opacity-65 w-fit">
       <div className="text-white text-sm ">

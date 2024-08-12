@@ -16,9 +16,7 @@ const DashBoard = () => {
           data={mapleUseCount}
         />
         <BotUsePieChart title="몬헌 봇 명령어 이용 횟수" data={mhBotUseCount} />
-        <Item height={600}>
-          <LiveChatCountChart />
-        </Item>
+        <LiveChatCountChart />
         <Item height={600}>
           <div>어쩌구 저쩌구8</div>
         </Item>
