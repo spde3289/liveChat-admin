@@ -4,6 +4,7 @@ import BotUsePieChart from "./botUsePieChart";
 import LiveChatCountChart from "./liveChatCountChart";
 import mapleUseCount from "@/data/mapleBotuseCount.json";
 import mhBotUseCount from "@/data/MHBotUseCount.json";
+import chatCount from "@/data/chatCount.json";
 
 const DashBoard = () => {
   //flex flex-wrap
@@ -16,7 +17,7 @@ const DashBoard = () => {
           data={mapleUseCount}
         />
         <BotUsePieChart title="몬헌 봇 명령어 이용 횟수" data={mhBotUseCount} />
-        <LiveChatCountChart />
+        <LiveChatCountChart title="채팅방 생성 통계" data={chatCount} />
         <Item height={600}>
           <div>어쩌구 저쩌구8</div>
         </Item>
