@@ -12,7 +12,7 @@ const RoomList = () => {
       setRoomList(response);
     });
   }, []);
-  console.log(roomList);
+
   return (
     <>
       <ul className="h-full min-w-fit box-border overflow-y-scroll scrollBar scrollBarController">
