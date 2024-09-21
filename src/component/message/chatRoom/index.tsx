@@ -1,4 +1,6 @@
 import { useState, useEffect, memo, KeyboardEvent, ChangeEvent } from "react";
+import useRoomContext from "@/context/useRoomContext";
+import { RxExit } from "react-icons/rx";
 import { socket } from "@/socket/soket";
 import { ChatLogType } from "@/type/room";
 import MsgContainer from "./MsgContainer";
@@ -11,6 +13,7 @@ interface ChatRoomInterface {
 const user = "관리자";
 
 export default memo(function ChatRoom({ roomName }: ChatRoomInterface) {
+  const { setSelectedRoom } = useRoomContext();
   const [chatLog, setChatLog] = useState<ChatLogType[]>([]);
   const [msg, setMsg] = useState<string>("");
 
@@ -62,9 +65,17 @@ export default memo(function ChatRoom({ roomName }: ChatRoomInterface) {
     setMsg("");
   };
 
+  const handleExitEvent = () => {
+    setSelectedRoom(null);
+    socket.emit("나가기", user);
+  };
+
   return (
     <section className="scrollBarController flex flex-col items-center m-auto h-full w-full mx-0">
       <div className="flex h-[100%] w-full justify-between flex-col ">
+        <div onClick={handleExitEvent}>
+          <RxExit size="24" className="mr-10 float-right" />
+        </div>
         <MsgContainer user={user} chatLog={chatLog} />
         <InputContainer
           msg={msg}
