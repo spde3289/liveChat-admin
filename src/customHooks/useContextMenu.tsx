@@ -6,7 +6,7 @@ export interface ContextMenuItem {
   sub?: any;
 }
 
-interface ContextMenuState {
+export interface ContextMenuState {
   x: number;
   y: number;
   menuItems: ContextMenuItem[];

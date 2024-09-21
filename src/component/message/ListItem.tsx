@@ -2,6 +2,7 @@ import useRoomContext from "@/context/useRoomContext";
 import useContextMenu, { ContextMenuItem } from "@/customHooks/useContextMenu";
 // import { DeleteRoom, EditRoom } from "@/fetch/roomFatch";
 import { RoomListType } from "@/type/room";
+import ListItemModal from "./ListItemModal";
 
 import { stateAction, deleteAction } from "./action";
 
@@ -24,7 +25,7 @@ const ListItem = ({ item, setRoomList }: ListItemProps) => {
     handleContextMenu,
     handleMenuItemClick,
   } = useContextMenu();
-
+  // modal을 통해 수정할 수 있는 함수
   const handleRightClick = (event: React.MouseEvent) => {
     const menuItems: ContextMenuItem[] = [
       {
@@ -55,47 +56,11 @@ const ListItem = ({ item, setRoomList }: ListItemProps) => {
 
   return (
     <>
-      {contextMenuState.isOpen && (
-        <div
-          ref={contextMenuRef}
-          className="fixed rounded bg-white border border-gray-300 w-48 z-50"
-          style={{ top: contextMenuState.y, left: contextMenuState.x }}
-        >
-          {contextMenuState.menuItems.map((el) => (
-            <div
-              key={el.label}
-              className={`${
-                el.sub ? "list dropdown" : ""
-              } relative px-3 py-2 cursor-pointer border border-white hover:border-gray-400 text-sm text-gray-500`}
-              onClick={(e) => {
-                if (el.sub) {
-                  e.preventDefault();
-                }
-                el.action();
-              }}
-            >
-              {el.label}
-              {el.sub && (
-                <div className="dropdown-content bg-white z-50 border border-gray-300 absolute top-[-2px] right-[-84px]">
-                  {el.sub.map((ii: any) => (
-                    <div
-                      key={ii.label}
-                      className={`${
-                        ii.label === item.status
-                          ? "text-black check"
-                          : "text-gray-500"
-                      } px-3 py-2 cursor-pointer border border-white hover:border-gray-400 text-sm text-right`}
-                      onClick={() => ii.action()}
-                    >
-                      {ii.label}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+      <ListItemModal
+        contextMenuState={contextMenuState}
+        ref={contextMenuRef}
+        item={item}
+      />
       <li
         onClick={() => setSelectedRoom(item.id)}
         onContextMenu={(e) => {
