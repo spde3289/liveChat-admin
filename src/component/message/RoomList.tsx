@@ -4,12 +4,12 @@ import { RoomListType } from "@/type/room";
 import ListItemSort from "./ListItemSort";
 import ListItem from "./ListItem";
 
-export type sortType = { name: string; state: "down" | "up" };
+export type sortType = { name: "selectMenu" | "status"; state: "down" | "up" };
 
 const RoomList = () => {
   const [roomList, setRoomList] = useState<RoomListType>(null);
   const [sort, setSort] = useState<sortType>({
-    name: "",
+    name: "selectMenu",
     state: "down",
   });
 
@@ -22,44 +22,26 @@ const RoomList = () => {
   useEffect(() => {
     // 채팅방 리스트가 있다면 실행
     if (roomList != null) {
-      if (sort.name === "카테고리") {
-        if (sort.state === "down") {
-          setRoomList(
-            [...roomList].sort((a, b) => {
-              return a.selectMenu < b.selectMenu
-                ? 1
-                : a.selectMenu > b.selectMenu
-                ? -1
-                : 0;
-            })
-          );
-        } else if (sort.state === "up") {
-          setRoomList(
-            [...roomList].sort((a, b) => {
-              return a.selectMenu < b.selectMenu
-                ? -1
-                : a.selectMenu > b.selectMenu
-                ? 1
-                : 0;
-            })
-          );
-        }
-      }
-
-      if (sort.name === "상태") {
-        if (sort.state === "down") {
-          setRoomList(
-            [...roomList].sort((a, b) => {
-              return a.status < b.status ? 1 : a.status > b.status ? -1 : 0;
-            })
-          );
-        } else if (sort.state === "up") {
-          setRoomList(
-            [...roomList].sort((a, b) => {
-              return a.status < b.status ? -1 : a.status > b.status ? 1 : 0;
-            })
-          );
-        }
+      if (sort.state === "down") {
+        setRoomList(
+          [...roomList].sort((a, b) => {
+            return a[sort.name] < b[sort.name]
+              ? 1
+              : a[sort.name] > b[sort.name]
+              ? -1
+              : 0;
+          })
+        );
+      } else if (sort.state === "up") {
+        setRoomList(
+          [...roomList].sort((a, b) => {
+            return a[sort.name] < b[sort.name]
+              ? -1
+              : a[sort.name] > b[sort.name]
+              ? 1
+              : 0;
+          })
+        );
       }
     }
   }, [sort]);

@@ -15,28 +15,36 @@ const ListItemSort = ({ sort, setSort }: ListItmeSort) => {
       <div
         onClick={() => {
           setSort({
-            name: "카테고리",
+            name: "selectMenu",
             state:
-              sort.state == "down" && sort.name === "카테고리" ? "up" : "down",
+              sort.state == "down" && sort.name === "selectMenu"
+                ? "up"
+                : sort.state === "up" && sort.name != "selectMenu"
+                ? sort.state
+                : "down",
           });
         }}
         className="flex items-center justify-center w-24 p-[6px_14px] box-content "
       >
         카테고리
-        <SortArrow name="카테고리" sort={sort} />
+        <SortArrow name="selectMenu" sort={sort} />
       </div>
       <div
         onClick={() => {
           setSort({
-            name: "상태",
+            name: "status",
             state:
-              sort.state === "down" && sort.name === "상태" ? "up" : "down",
+              sort.state === "down" && sort.name === "status"
+                ? "up"
+                : sort.state === "up" && sort.name != "status"
+                ? sort.state
+                : "down",
           });
         }}
         className="flex items-center justify-center w-12 p-[6px_14px] box-content "
       >
         상태
-        <SortArrow name="상태" sort={sort} />
+        <SortArrow name="status" sort={sort} />
       </div>
     </li>
   );
