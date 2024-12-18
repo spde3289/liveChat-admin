@@ -11,7 +11,7 @@ const SortArrow = ({ name, sort }: SortArrowProps) => {
 
   return (
     <div className="ml-1">
-      {sort.state === "up" && currentIndex ? (
+      {sort.state === "up" ? (
         <IoMdArrowDropup color={currentIndex ? "black" : "gray"} />
       ) : (
         <IoMdArrowDropdown color={currentIndex ? "black" : "gray"} />
