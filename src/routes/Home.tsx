@@ -1,11 +1,11 @@
-import DashBoard from "@/component/dashBoard";
+import DashBoard from '@/component/dashBoard'
 
 const HomePage = () => {
   return (
     <>
       <DashBoard />
     </>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

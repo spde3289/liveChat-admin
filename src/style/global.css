@@ -40,7 +40,7 @@
 }
 
 .list::after {
-  content: "▶";
+  content: '▶';
   display: inline-block;
   font-size: x-small;
   position: absolute;
@@ -48,7 +48,7 @@
 }
 
 .check::before {
-  content: "✓ ";
+  content: '✓ ';
 }
 
 .recharts-pie * {

@@ -1,6 +1,6 @@
 [
-  { "title": "메이플 봇 이용 횟수", "count": 50, "dailyIncrease": 2 },
-  { "title": "몬헌 봇 이용 횟수", "count": 50, "dailyIncrease": 0 },
-  { "title": "문의 방문자 수", "count": 50, "dailyIncrease": 2 },
-  { "title": "블로그 방문자 수", "count": 50, "dailyIncrease": 41 }
+  { "title": "등록된 총 문의 개수", "count": 3, "weeklyIncrease": 0 },
+  { "title": "종료된 총 문의 개수", "count": 1, "weeklyIncrease": 0 },
+  { "title": "메이플헬퍼 총 방문자", "count": 2301, "weeklyIncrease": 75 },
+  { "title": "메이플헬퍼 재방문자", "count": 232, "weeklyIncrease": 24 }
 ]

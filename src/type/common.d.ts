@@ -1,3 +1,3 @@
 export interface CommonResponse<T> {
-  data?: T;
+  data?: T
 }

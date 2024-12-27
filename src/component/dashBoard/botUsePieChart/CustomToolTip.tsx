@@ -1,7 +1,7 @@
-import { memo } from "react";
+import { memo } from 'react'
 
 const CustomTooltip = (props: any) => {
-  const { payload } = props;
+  const { payload } = props
 
   return (
     <div className="p-2 ani bg-black bg-opacity-65 w-fit">
@@ -9,7 +9,7 @@ const CustomTooltip = (props: any) => {
         {payload?.[0]?.payload?.name} {payload?.[0]?.value}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default memo(CustomTooltip);
+export default memo(CustomTooltip)

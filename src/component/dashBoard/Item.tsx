@@ -1,14 +1,14 @@
 interface ItemProps {
-  width?: number;
-  height?: number;
-  children?: React.ReactElement;
+  width?: number
+  height?: number
+  children?: React.ReactElement
 }
 
 const Item = ({ width, height, children }: ItemProps) => {
   const style = {
-    width: width ? `${width}px` : "auto",
-    height: height ? `${height}px` : "auto",
-  };
+    width: width ? `${width}px` : 'auto',
+    height: height ? `${height}px` : 'auto',
+  }
 
   return (
     <>
@@ -16,7 +16,7 @@ const Item = ({ width, height, children }: ItemProps) => {
         {children}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Item;
+export default Item

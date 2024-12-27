@@ -1,10 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import Paths from "./path";
-import HomePage from "./Home";
-import MessagePage from "./Message";
-import RootLayout from "@/component/RootLayout/RootLayout";
-import NotFound from "./NotFound";
+import RootLayout from '@/component/RootLayout/RootLayout'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import HomePage from './Home'
+import MessagePage from './Message'
+import NotFound from './NotFound'
+import Paths from './path'
 
 const router = createBrowserRouter([
   {
@@ -13,7 +12,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        path: "",
+        path: '',
         element: <HomePage />,
       },
       {
@@ -22,8 +21,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+])
 
-export const CreateRouterProvider: any = () => (
-  <RouterProvider router={router} />
-);
+export const CreateRouterProvider = () => <RouterProvider router={router} />

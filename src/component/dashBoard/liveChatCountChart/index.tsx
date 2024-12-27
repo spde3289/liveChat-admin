@@ -1,50 +1,68 @@
 import {
-  ComposedChart,
   Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
+  BarChart,
+  CartesianGrid,
   Legend,
   ResponsiveContainer,
-} from "recharts";
-import Item from "../Item";
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
+import Item from '../Item'
+
+type dateType = { name: string; 진행중: number; 종료됨: number }
 
 interface LiveChatCountChartProps {
-  title: string;
-  data: any[];
+  title: string
+  data: dateType[]
 }
-
 const LiveChatCountChart = ({ title, data }: LiveChatCountChartProps) => {
+  const domainMax = (value: number) => {
+    return value + value / 5
+  }
+
   return (
     <Item height={600}>
       <>
         <div className="w-full h-full p-3 pr-5">
           <div className="text-xl font-bold">{title}</div>
           <ResponsiveContainer width="100%" height="100%">
-            <ComposedChart
-              layout="vertical"
-              width={600}
-              height={200}
+            <BarChart
               data={data}
               margin={{
-                top: 20,
-                right: 20,
-                bottom: 20,
-                left: 70,
+                top: 30,
+                bottom: 30,
               }}
+              barSize={20}
             >
-              <XAxis type="number" />
-              <YAxis dataKey="name" type="category" />
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis
+                scale="linear"
+                domain={[0, domainMax]}
+                tickFormatter={(tick) => (tick % 1 === 0 ? tick : '')}
+                tickLine={false}
+              />
               <Tooltip />
               <Legend />
-              <Bar dataKey="진행중" stackId="a" barSize={20} fill="#8884d8" />
-              <Bar dataKey="종료됨" stackId="a" barSize={20} fill="#413ea0" />
-            </ComposedChart>
+              <Bar
+                dataKey="진행중"
+                minPointSize={5}
+                barSize={20}
+                fill="#8884d8"
+              />
+              <Bar
+                dataKey="종료됨"
+                minPointSize={5}
+                barSize={20}
+                fill="#413ea0"
+              />
+            </BarChart>
           </ResponsiveContainer>
         </div>
       </>
     </Item>
-  );
-};
+  )
+}
 
-export default LiveChatCountChart;
+export default LiveChatCountChart

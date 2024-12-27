@@ -1,14 +1,14 @@
-import { MdDashboard } from "react-icons/md";
-import { TbMessages } from "react-icons/tb";
-import { Paths } from "@/routes";
-import MenuItem from "./item";
+import { MdDashboard } from 'react-icons/md'
+import { TbMessages } from 'react-icons/tb'
+import { Paths } from '@/routes'
+import MenuItem from './item'
 
 const icon = {
   size: 28,
-  className: "",
-};
+  className: '',
+}
 
-const className = "mr-2";
+const className = 'mr-2'
 
 const SideBar = () => {
   return (
@@ -31,7 +31,7 @@ const SideBar = () => {
         </ul>
       </nav>
     </>
-  );
-};
+  )
+}
 
-export default SideBar;
+export default SideBar

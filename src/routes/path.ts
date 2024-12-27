@@ -1,6 +1,6 @@
 export const Paths = Object.freeze({
-  Home: "/",
-  message: "/message",
-});
+  Home: '/',
+  message: '/message',
+})
 
-export default Paths;
+export default Paths

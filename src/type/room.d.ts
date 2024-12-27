@@ -1,15 +1,15 @@
 export type RoomListType =
   | {
-      id: string;
-      roomName: string;
-      status: string;
-      selectMenu: string;
+      id: string
+      roomName: string
+      status: string
+      selectMenu: string
     }[]
-  | null;
+  | null
 
 export type ChatLogType = {
-  user: string;
-  msg: string;
-};
+  user: string
+  msg: string
+}
 
-export type StatusType = "진행중" | "종료됨";
+export type StatusType = '진행중' | '종료됨'

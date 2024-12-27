@@ -1,5 +1,5 @@
-import RoomList from "@/component/message/RoomList";
-import ChatRoomLobby from "@/component/message/ChatRoomLobby";
+import ChatRoomLobby from '@/component/message/ChatRoomLobby'
+import RoomList from '@/component/message/RoomList'
 
 const MessagePage = () => {
   return (
@@ -11,7 +11,7 @@ const MessagePage = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default MessagePage;
+export default MessagePage

@@ -1,7 +1,7 @@
-import { io } from "socket.io-client";
-export const getApiBase = () => import.meta.env.VITE_BASE_URL;
+import { io } from 'socket.io-client'
+export const getApiBase = () => import.meta.env.VITE_BASE_URL
 
 export const socket = io(getApiBase(), {
-  transports: ["websocket"],
+  transports: ['websocket'],
   withCredentials: true,
-});
+})

@@ -1,5 +1,5 @@
-import { CreateRouterProvider } from "@/routes";
-import { RoomProvider } from "./context/useRoomContext";
+import { CreateRouterProvider } from '@/routes'
+import { RoomProvider } from './context/useRoomContext'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         <CreateRouterProvider />
       </RoomProvider>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

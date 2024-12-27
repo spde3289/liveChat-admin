@@ -1,11 +1,11 @@
-import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from "recharts";
-import CustomTooltip from "./CustomToolTip";
-import LegendContent from "./LegendContent";
-import Item from "../Item";
+import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts'
+import CustomTooltip from './CustomToolTip'
+import LegendContent from './LegendContent'
+import Item from '../Item'
 
 interface PieChartProps {
-  title: string;
-  data: any[];
+  title: string
+  data: any[]
 }
 
 const BotUsePieChart = ({ title, data }: PieChartProps) => {
@@ -38,7 +38,7 @@ const BotUsePieChart = ({ title, data }: PieChartProps) => {
         </div>
       </>
     </Item>
-  );
-};
+  )
+}
 
-export default BotUsePieChart;
+export default BotUsePieChart

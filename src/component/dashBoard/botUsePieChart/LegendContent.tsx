@@ -1,8 +1,8 @@
-import { memo } from "react";
-import { BsSuitDiamondFill } from "react-icons/bs";
+import { memo } from 'react'
+import { BsSuitDiamondFill } from 'react-icons/bs'
 
 const LegendContent = (props: any) => {
-  const { payload } = props;
+  const { payload } = props
 
   return (
     <ul>
@@ -13,7 +13,7 @@ const LegendContent = (props: any) => {
         </li>
       ))}
     </ul>
-  );
-};
+  )
+}
 
-export default memo(LegendContent);
+export default memo(LegendContent)

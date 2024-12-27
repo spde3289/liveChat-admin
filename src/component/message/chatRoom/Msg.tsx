@@ -1,31 +1,31 @@
-import { memo } from "react";
-import { ChatLogType } from "@/type/room";
+import { memo } from 'react'
+import { ChatLogType } from '@/type/room'
 
 interface MsgPropsType {
-  userType: string;
-  chat: ChatLogType;
+  userType: string
+  chat: ChatLogType
 }
 
 interface UserTypes {
-  [key: string]: string;
-  me: string;
-  other: string;
-  system: string;
+  [key: string]: string
+  me: string
+  other: string
+  system: string
 }
 
 const user: UserTypes = {
-  me: "rounded-3xl bg-[#f4f4f4]",
-  other: "rounded-3xl bg-[#f4f4f4]",
-  system: "",
-};
+  me: 'rounded-3xl bg-[#f4f4f4]',
+  other: 'rounded-3xl bg-[#f4f4f4]',
+  system: '',
+}
 
 export default memo(function Msg({ userType, chat }: MsgPropsType) {
-  const type = userType === "me" ? "float-right" : "float-left";
+  const type = userType === 'me' ? 'float-right' : 'float-left'
   return (
     <>
       <div className="box-content ">
         <div className={type}>
-          <div className={`${userType === "me" ? "text-right" : ""} text-xl`}>
+          <div className={`${userType === 'me' ? 'text-right' : ''} text-xl`}>
             {chat.user}
           </div>
           <div
@@ -37,5 +37,5 @@ export default memo(function Msg({ userType, chat }: MsgPropsType) {
         </div>
       </div>
     </>
-  );
-});
+  )
+})

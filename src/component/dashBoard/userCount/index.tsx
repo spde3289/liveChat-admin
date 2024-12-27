@@ -1,5 +1,5 @@
-import UserCount from "./UserCount";
-import userCountData from "@/data/userCount.json";
+import userCountData from '@/data/userCount.json'
+import UserCount from './UserCount'
 
 const UserCountContainer = () => {
   return (
@@ -9,11 +9,11 @@ const UserCountContainer = () => {
           key={el.title}
           title={el.title}
           count={el.count}
-          dailyIncrease={el.dailyIncrease}
+          dailyIncrease={el.weeklyIncrease}
         />
       ))}
     </>
-  );
-};
+  )
+}
 
-export default UserCountContainer;
+export default UserCountContainer

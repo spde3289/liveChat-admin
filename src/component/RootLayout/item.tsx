@@ -1,17 +1,17 @@
-import { ReactElement } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { ReactElement } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 interface MenuItemProps {
-  children: ReactElement;
-  path: string;
+  children: ReactElement
+  path: string
 }
 
 const MenuItem = ({ children, path }: MenuItemProps) => {
-  const location = useLocation();
+  const location = useLocation()
 
   const currentIndex =
-    location.pathname.replace("/", "") === path.replace("/", "")
-      ? "bg-[#616570] text-white"
-      : "text-slate-500";
+    location.pathname.replace('/', '') === path.replace('/', '')
+      ? 'bg-[#616570] text-white'
+      : 'text-slate-500'
 
   return (
     <li className={` ${currentIndex} flex h-16 items-center w-full `}>
@@ -22,7 +22,7 @@ const MenuItem = ({ children, path }: MenuItemProps) => {
         {children}
       </Link>
     </li>
-  );
-};
+  )
+}
 
-export default MenuItem;
+export default MenuItem
