@@ -1,11 +1,11 @@
-import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts'
+import { Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts'
+import Item from '../Item'
 import CustomTooltip from './CustomToolTip'
 import LegendContent from './LegendContent'
-import Item from '../Item'
 
 interface PieChartProps {
   title: string
-  data: any[]
+  data: { name: string; value: number; fill: string }[]
 }
 
 const BotUsePieChart = ({ title, data }: PieChartProps) => {

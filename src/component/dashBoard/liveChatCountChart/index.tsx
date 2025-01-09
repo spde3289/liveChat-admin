@@ -49,13 +49,21 @@ const LiveChatCountChart = ({ title, data }: LiveChatCountChartProps) => {
                 dataKey="진행중"
                 minPointSize={5}
                 barSize={20}
-                fill="#8884d8"
+                fill="#1F77B4"
+                stackId="a"
               />
               <Bar
                 dataKey="종료됨"
                 minPointSize={5}
                 barSize={20}
-                fill="#413ea0"
+                fill="#2CA02C"
+                stackId="a"
+              />
+              <Bar
+                dataKey="합계"
+                minPointSize={5}
+                barSize={20}
+                fill="#9467BD"
               />
             </BarChart>
           </ResponsiveContainer>
